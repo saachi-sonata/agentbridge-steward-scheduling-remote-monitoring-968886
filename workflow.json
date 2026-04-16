@@ -1,0 +1,379 @@
+{
+  "id": "tpl-933707613",
+  "name": "Steward • Scheduling (Remote Monitoring)",
+  "description": "Steward • Scheduling (Remote Monitoring) prioritizes encounter summaries and orchestrates pathology reports; applies decision gates and observability; orchestrates via Telemedicine Platform to reduce LOS.",
+  "industry": "Healthcare & Life Sciences",
+  "pattern": "Decompose-Route",
+  "complexity": "Advanced",
+  "rating": 4.5,
+  "downloads": 11414,
+  "favorites": 2788,
+  "executionTime": "7 min",
+  "tags": [
+    "pv",
+    "revenue-cycle",
+    "decompose-route",
+    "healthcare"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Order Intake",
+      "description": "Collect, validate and normalize demographics from Care Management; attach a runId and timestamp for traceability."
+    },
+    {
+      "id": "decompose-0",
+      "name": "Decompose",
+      "description": "Execute decompose phase for the Decompose-Route pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "route-1",
+      "name": "Route",
+      "description": "Execute route phase for the Decompose-Route pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "monitoring-0",
+      "name": "Monitoring",
+      "description": "Monitoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "eligibility-match-1",
+      "name": "Eligibility Match",
+      "description": "Eligibility Match across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "optimization-2",
+      "name": "Optimization",
+      "description": "Optimization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "normalization-3",
+      "name": "Normalization",
+      "description": "Normalization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "risk-scoring-4",
+      "name": "Risk Scoring",
+      "description": "Risk Scoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Finalize Plan",
+      "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to LIS; return response JSON for the client."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Order Intake",
+        "description": "Collect, validate and normalize demographics from Care Management; attach a runId and timestamp for traceability.",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "decompose-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Decompose",
+        "description": "Execute decompose phase for the Decompose-Route pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "route-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Route",
+        "description": "Execute route phase for the Decompose-Route pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "monitoring-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Monitoring",
+        "description": "Monitoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "eligibility-match-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Eligibility Match",
+        "description": "Eligibility Match across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "optimization-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Optimization",
+        "description": "Optimization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "normalization-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "Normalization",
+        "description": "Normalization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    },
+    {
+      "id": "risk-scoring-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "Risk Scoring",
+        "description": "Risk Scoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1810,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Finalize Plan",
+        "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to LIS; return response JSON for the client.",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2060,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "decompose-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "decompose-0",
+      "target": "route-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "route-1",
+      "target": "monitoring-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "monitoring-0",
+      "target": "eligibility-match-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "eligibility-match-1",
+      "target": "optimization-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "optimization-2",
+      "target": "normalization-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-6",
+      "source": "normalization-3",
+      "target": "risk-scoring-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-7",
+      "source": "risk-scoring-4",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Order Intake → Decompose → Route → Monitoring → Eligibility Match → Optimization → Normalization → Risk Scoring → Finalize Plan",
+  "featured": true,
+  "createdAt": "2025-04-19T10:01:54.168Z",
+  "author": "AgentBridge Team",
+  "deployments": 1190,
+  "lastDeployed": "2026-03-26T03:59:04.337Z",
+  "configuration": {
+    "provider": "gcp",
+    "region": "us-west-2",
+    "compute": "memory-optimized"
+  },
+  "healthStatus": "degraded",
+  "deploymentCount": 586,
+  "githubRepo": "https://github.com/agentbridge/steward-•-scheduling-(remote-monitoring)",
+  "maintainer": "AgentBridge Team",
+  "agenticLayers": {
+    "reasoning": {
+      "modelType": "gpt-4o",
+      "reasoningPattern": "ReAct",
+      "contextWindow": 128000,
+      "memorySystem": "hybrid",
+      "decisionFramework": "Multi-Criteria Decision Analysis"
+    },
+    "orchestration": {
+      "workflowEngine": "n8n",
+      "coordinationPattern": "centralized",
+      "failoverStrategy": "retry",
+      "loadBalancing": "intelligent"
+    },
+    "protocol": {
+      "communicationProtocol": "MCP",
+      "messageFormat": "JSON",
+      "authenticationMethod": "OAuth2",
+      "encryptionStandard": "AES-256"
+    },
+    "governance": {
+      "policyEngine": "OPA",
+      "complianceStandards": [
+        "SOC2",
+        "GDPR"
+      ],
+      "auditTrail": true,
+      "riskAssessment": "medium",
+      "dataClassification": "internal"
+    },
+    "observability": {
+      "metricsCollection": "Prometheus",
+      "loggingFramework": "ELK",
+      "tracingSystem": "Jaeger",
+      "alertingRules": [],
+      "dashboardConfig": {
+        "layout": "grid",
+        "widgets": [
+          "metrics",
+          "logs",
+          "traces"
+        ],
+        "refreshInterval": 30
+      }
+    },
+    "intelligence": {
+      "learningCapability": "online",
+      "knowledgeBase": "vector-db",
+      "adaptationMechanism": "ml-based",
+      "performanceOptimization": "ai-driven"
+    }
+  },
+  "businessFunction": "data-preparation-node",
+  "autonomyLevel": "semi-autonomous",
+  "cognitiveCapabilities": [
+    {
+      "name": "Pattern Recognition",
+      "description": "Identifies patterns in business processes",
+      "confidenceLevel": 0.85,
+      "lastUpdated": "2026-04-16T10:01:54.206Z"
+    }
+  ],
+  "roiMetrics": {
+    "costSavings": 25598,
+    "timeReduction": 20,
+    "accuracyImprovement": 39,
+    "throughputIncrease": 62,
+    "errorReduction": 42
+  },
+  "complianceFramework": {
+    "standards": [
+      "SOC2",
+      "GDPR",
+      "ISO27001"
+    ],
+    "certifications": [
+      "SOC2 Type II"
+    ],
+    "auditFrequency": "monthly",
+    "lastAudit": "2026-03-12T22:59:49.190Z"
+  },
+  "scalingPolicy": {
+    "minInstances": 1,
+    "maxInstances": 10,
+    "scaleUpThreshold": 80,
+    "scaleDownThreshold": 20,
+    "cooldownPeriod": 300
+  }
+}
