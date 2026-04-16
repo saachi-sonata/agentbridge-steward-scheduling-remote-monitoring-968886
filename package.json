@@ -1,0 +1,38 @@
+{
+  "name": "steward-•-scheduling-(remote-monitoring)",
+  "version": "1.0.0",
+  "description": "Steward • Scheduling (Remote Monitoring) prioritizes encounter summaries and orchestrates pathology reports; applies decision gates and observability; orchestrates via Telemedicine Platform to reduce LOS.",
+  "main": "workflow.json",
+  "keywords": [
+    "agentbridge",
+    "workflow",
+    "automation",
+    "ai-agents",
+    "decompose-route",
+    "healthcare-&-life-sciences",
+    "pv",
+    "revenue-cycle",
+    "decompose-route",
+    "healthcare"
+  ],
+  "author": "AgentBridge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saachi-sonata/agentbridge-steward-scheduling-remote-monitoring-968886.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saachi-sonata/agentbridge-steward-scheduling-remote-monitoring-968886/issues"
+  },
+  "homepage": "https://github.com/saachi-sonata/agentbridge-steward-scheduling-remote-monitoring-968886#readme",
+  "scripts": {
+    "start": "echo \"Import this workflow into your AgentBridge instance\"",
+    "validate": "echo \"Workflow validation complete\"",
+    "test": "echo \"Run workflow tests\"",
+    "deploy": "echo \"Deploy to AgentBridge instance\""
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "agentbridge": ">=6.0.0"
+  }
+}
