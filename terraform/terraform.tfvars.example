@@ -1,0 +1,11 @@
+# Copy this file to terraform.tfvars and fill in your values
+# NEVER commit terraform.tfvars to version control
+
+# ──── Provider Credentials ────
+subscription_id = "your-azure-subscription-id"
+ssh_public_key  = "ssh-rsa AAAA..."
+
+# ──── Configuration ────
+region        = "eastus"
+instance_type = "Standard_D1"
+environment   = "production"
